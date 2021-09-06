@@ -7,12 +7,12 @@ Imports System.Windows
 Imports System.Windows.Documents
 
 Namespace MultiLevelMasterDetail
-    Partial Public Class MainWindow
-        Inherits Window
+	Partial Public Class MainWindow
+		Inherits Window
 
-        Public Sub New()
-            InitializeComponent()
-            DataContext = New MultiLevelDataSource()
-        End Sub
-    End Class
+		Public Sub New()
+			InitializeComponent()
+			DataContext = New MultiLevelDataSource()
+		End Sub
+	End Class
 End Namespace
