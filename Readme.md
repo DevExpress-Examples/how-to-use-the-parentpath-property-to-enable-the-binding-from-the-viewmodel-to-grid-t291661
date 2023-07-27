@@ -5,7 +5,7 @@
 
 # WPF Data Grid - Use the ParentPath Property to Define the Selected Detail Row in the View Model
 
-This example specifies the selected detail row in the View Model and makes the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl) determine the master row associated with this detail row.
+This example demonstrates how to bind the selected detail row to the View Model property in two way mode.
 
 ![image](https://github.com/DevExpress-Examples/how-to-use-the-parentpath-property-to-enable-the-binding-from-the-viewmodel-to-grid-t291661/assets/65009440/4898c6af-8aa4-4eb8-8724-5b49d3770550)
 
