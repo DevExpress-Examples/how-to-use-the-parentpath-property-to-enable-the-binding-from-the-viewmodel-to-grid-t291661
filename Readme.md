@@ -5,15 +5,15 @@
 
 # WPF Data Grid - Use the ParentPath Property to Define the Selected Detail Row in the View Model
 
-This example specifies the selected detail object in the View Model and makes the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl) determine the master object associated with the detail object.
+This example specifies the selected detail row in the View Model and makes the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl) determine the master row associated with this detail row.
 
 ![image](https://github.com/DevExpress-Examples/how-to-use-the-parentpath-property-to-enable-the-binding-from-the-viewmodel-to-grid-t291661/assets/65009440/4898c6af-8aa4-4eb8-8724-5b49d3770550)
 
-Your detail objects should contain information about their master items to define selected and focused detail items in the View Model. Assign the [DataControlDetailDescriptor.ParentPath](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.DataControlDetailDescriptor.ParentPath) property to the detail data source field that contains master objects. In this case, the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl) can determine the master object associated with the detail object and select the specified row.
+Your detail objects should contain information about their master items to define selected and focused detail items in the View Model. Assign the [DataControlDetailDescriptor.ParentPath](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.DataControlDetailDescriptor.ParentPath) property to the detail data source field that contains master objects. In this case, the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl) can determine the master item associated with the detail item and select the specified row.
 
 ## Implementation Details
 
-In this example, the [DataControlDetailDescriptor.ParentPath](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.DataControlDetailDescriptor.ParentPath) property is set to the detail object's **MasterItem** property that references the master object. The combo box at the bottom contains detail items of the focused master row. You can choose a detail item in the combo box to focus this item within the grid.
+In this example, the [DataControlDetailDescriptor.ParentPath](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.DataControlDetailDescriptor.ParentPath) property is set to the detail object's **MasterItem** property that references its master item. The combo box at the bottom contains detail items of the focused master row. You can choose a detail item in the combo box to focus this item within the grid.
 
 ## Files to Review
 
