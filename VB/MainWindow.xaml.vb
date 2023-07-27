@@ -7,7 +7,6 @@ Namespace MultiLevelMasterDetail
 
         Public Sub New()
             Me.InitializeComponent()
-            DataContext = New MultiLevelDataSource()
         End Sub
     End Class
 End Namespace

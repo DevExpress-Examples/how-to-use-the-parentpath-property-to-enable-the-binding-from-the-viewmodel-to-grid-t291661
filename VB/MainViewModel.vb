@@ -1,71 +1,54 @@
+Imports DevExpress.Mvvm
 Imports System.Collections.Generic
 Imports System.Collections.ObjectModel
-Imports System.ComponentModel
 
 Namespace MultiLevelMasterDetail
 
-    Public Class MultiLevelDataSource
-        Implements INotifyPropertyChanged
+    Public Class MainViewModel
+        Inherits ViewModelBase
 
-        Private currentItemField As MasterLevelItem
+        Private _Items As ObservableCollection(Of MultiLevelMasterDetail.MasterLevelItem)
 
-        Private currentDetailItemField As DetailLevelItem
-
-        Private itemsField As ObservableCollection(Of MasterLevelItem)
+        Public Sub New()
+            Items = New ObservableCollection(Of MasterLevelItem)()
+            InitMasterItems()
+            CurrentMasterItem = Nothing
+        End Sub
 
         Public Property Items As ObservableCollection(Of MasterLevelItem)
             Get
-                Return itemsField
+                Return _Items
             End Get
 
-            Set(ByVal value As ObservableCollection(Of MasterLevelItem))
-                If itemsField Is value Then Return
-                itemsField = value
-                RaisePropertyChanged("Items")
+            Private Set(ByVal value As ObservableCollection(Of MasterLevelItem))
+                _Items = value
             End Set
         End Property
 
-        Public Property CurrentItem As MasterLevelItem
+        Public Property CurrentMasterItem As MasterLevelItem
             Get
-                Return currentItemField
+                Return GetValue(Of MasterLevelItem)()
             End Get
 
             Set(ByVal value As MasterLevelItem)
-                If currentItemField Is value Then Return
-                currentItemField = value
-                RaisePropertyChanged("CurrentItem")
+                SetValue(value)
             End Set
         End Property
 
         Public Property CurrentDetailItem As DetailLevelItem
             Get
-                Return currentDetailItemField
+                Return GetValue(Of DetailLevelItem)()
             End Get
 
             Set(ByVal value As DetailLevelItem)
-                If currentDetailItemField Is value Then Return
-                currentDetailItemField = value
-                RaisePropertyChanged("CurrentDetailItem")
+                SetValue(value)
             End Set
         End Property
-
-        Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
-
-        Public Sub New()
-            Items = New ObservableCollection(Of MasterLevelItem)()
-            InitMasterItems()
-            CurrentItem = Nothing
-        End Sub
 
         Private Sub InitMasterItems()
             For i As Integer = 0 To 10 - 1
                 Items.Add(New MasterLevelItem() With {.MasterId = i, .MasterName = String.Format("master item {0}", i)})
             Next
-        End Sub
-
-        Private Sub RaisePropertyChanged(ByVal propertyName As String)
-            If PropertyChangedEvent Is Nothing Then Return
-            RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
         End Sub
     End Class
 
