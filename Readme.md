@@ -9,7 +9,7 @@ This example specifies the selected detail object in the View Model and makes th
 
 ![image](https://github.com/DevExpress-Examples/how-to-use-the-parentpath-property-to-enable-the-binding-from-the-viewmodel-to-grid-t291661/assets/65009440/4898c6af-8aa4-4eb8-8724-5b49d3770550)
 
-Your detail objects should contain information about their master items to define selected and focused detail items in the View Model. Assign the [DataControlDetailDescriptor.ParentPath](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.DataControlDetailDescriptor.ParentPath) property to the detail data source field that contains master objects. In this case, the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl) can define the master object associated with the detail object and select the specified row:
+Your detail objects should contain information about their master items to define selected and focused detail items in the View Model. Assign the [DataControlDetailDescriptor.ParentPath](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.DataControlDetailDescriptor.ParentPath) property to the detail data source field that contains master objects. In this case, the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl) can define the master object associated with the detail object and select the specified row.
 
 ## Implementation Details
 
